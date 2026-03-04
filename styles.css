@@ -1246,14 +1246,16 @@ body:hover .cursor-glow {
         --section-padding: 70px;
     }
     
-    /* Hide cursor glow on touch devices */
+    /* Keep cursor glow on mobile for touch effect */
     .cursor-glow {
-        display: none;
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(circle, rgba(249, 115, 22, 0.15) 0%, transparent 70%);
     }
     
-    /* Matrix rain less intense on mobile */
+    /* Matrix rain visible on mobile */
     #matrixCanvas {
-        opacity: 0.08;
+        opacity: 0.15;
     }
     
     .nav-links, .nav-cta {

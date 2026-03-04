@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ========================================
-// Cursor Glow Effect
+// Cursor Glow Effect (works on mobile too)
 // ========================================
 function initCursorGlow() {
     const cursorGlow = document.getElementById('cursorGlow');
@@ -25,9 +25,32 @@ function initCursorGlow() {
     let currentX = 0;
     let currentY = 0;
     
+    // Mouse events for desktop
     document.addEventListener('mousemove', (e) => {
         mouseX = e.clientX;
         mouseY = e.clientY;
+        cursorGlow.style.opacity = '1';
+    });
+    
+    // Touch events for mobile
+    document.addEventListener('touchstart', (e) => {
+        const touch = e.touches[0];
+        mouseX = touch.clientX;
+        mouseY = touch.clientY;
+        cursorGlow.style.opacity = '1';
+    });
+    
+    document.addEventListener('touchmove', (e) => {
+        const touch = e.touches[0];
+        mouseX = touch.clientX;
+        mouseY = touch.clientY;
+    });
+    
+    document.addEventListener('touchend', () => {
+        // Keep glow visible for a moment after touch ends
+        setTimeout(() => {
+            cursorGlow.style.opacity = '0.5';
+        }, 500);
     });
     
     function animate() {
@@ -151,11 +174,11 @@ function initTypingEffect() {
     if (!typingElement) return;
     
     const titles = [
-        'LLM Engineer',
+        'LLM Python Developer',
         'Backend Developer',
-        'Python Developer',
-        'AI Systems Architect',
-        'Team Lead'
+        'POD Lead',
+        'Team Lead',
+        'AI Systems Engineer'
     ];
     
     let titleIndex = 0;
