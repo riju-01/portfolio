@@ -95,9 +95,9 @@ strong {
     width: 600px;
     height: 600px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(249, 115, 22, 0.08) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(249, 115, 22, 0.12) 0%, transparent 70%);
     pointer-events: none;
-    z-index: 0;
+    z-index: 1;
     transform: translate(-50%, -50%);
     transition: opacity 0.3s ease;
     opacity: 0;
@@ -105,6 +105,20 @@ strong {
 
 body:hover .cursor-glow {
     opacity: 1;
+}
+
+/* ========================================
+   Matrix Rain Canvas
+   ======================================== */
+#matrixCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    opacity: 0.15;
+    pointer-events: none;
 }
 
 /* ========================================
@@ -202,13 +216,27 @@ body:hover .cursor-glow {
     border: none;
     cursor: pointer;
     padding: 5px;
+    z-index: 1001;
 }
 
 .nav-toggle span {
     width: 24px;
     height: 2px;
     background: var(--text-primary);
-    transition: all var(--transition-fast);
+    transition: all var(--transition-medium);
+    transform-origin: center;
+}
+
+.nav-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
 }
 
 /* Mobile Menu */
@@ -1218,6 +1246,16 @@ body:hover .cursor-glow {
         --section-padding: 70px;
     }
     
+    /* Hide cursor glow on touch devices */
+    .cursor-glow {
+        display: none;
+    }
+    
+    /* Matrix rain less intense on mobile */
+    #matrixCanvas {
+        opacity: 0.08;
+    }
+    
     .nav-links, .nav-cta {
         display: none;
     }
@@ -1234,70 +1272,325 @@ body:hover .cursor-glow {
         font-size: 2.5rem;
     }
     
+    .hero-title {
+        font-size: 1.1rem;
+    }
+    
+    .hero-description {
+        font-size: 1rem;
+    }
+    
     .hero-stats {
-        flex-direction: column;
-        gap: 20px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 25px;
     }
     
     .stat-item {
         text-align: center;
+        min-width: 80px;
+    }
+    
+    .stat-number {
+        font-size: 1.6rem;
     }
     
     .hero-actions {
         flex-direction: column;
         width: 100%;
+        gap: 12px;
     }
     
     .btn {
         justify-content: center;
+        width: 100%;
     }
     
-    .exp-header {
-        flex-direction: column;
-    }
-    
-    .exp-meta {
-        text-align: left;
-    }
-    
-    .contact-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .achievement-card {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .education-card {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .pub-meta {
-        flex-direction: column;
-        gap: 10px;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero {
-        padding: 100px 20px 60px;
-    }
-    
-    .section {
-        padding: var(--section-padding) 20px;
-    }
-    
-    .hero-name {
-        font-size: 2rem;
+    .section-header {
+        margin-bottom: 35px;
     }
     
     .section-title {
         font-size: 1.8rem;
     }
     
+    .about-text p {
+        font-size: 1rem;
+    }
+    
+    .about-highlights {
+        gap: 10px;
+    }
+    
+    .highlight-item {
+        font-size: 0.9rem;
+    }
+    
+    .skills-grid {
+        gap: 20px;
+    }
+    
+    .skill-group h4 {
+        font-size: 0.8rem;
+    }
+    
+    .skill-tags {
+        gap: 6px;
+    }
+    
+    .skill-tag {
+        font-size: 0.8rem;
+        padding: 5px 10px;
+    }
+    
+    .exp-header {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .exp-meta {
+        text-align: left;
+    }
+    
+    .company-logo {
+        width: 45px;
+        height: 45px;
+        font-size: 1.3rem;
+    }
+    
+    .exp-roles {
+        gap: 8px;
+    }
+    
+    .role-tag {
+        font-size: 0.8rem;
+        padding: 5px 10px;
+    }
+    
+    .exp-achievements li {
+        font-size: 0.9rem;
+    }
+    
+    .project-card {
+        padding: 20px;
+    }
+    
+    .project-title {
+        font-size: 1.1rem;
+    }
+    
+    .project-description {
+        font-size: 0.9rem;
+    }
+    
+    .project-features li {
+        font-size: 0.85rem;
+    }
+    
+    .project-tech span {
+        font-size: 0.7rem;
+        padding: 3px 8px;
+    }
+    
+    .publication-card {
+        padding: 25px;
+    }
+    
+    .pub-title {
+        font-size: 1.1rem;
+    }
+    
+    .pub-abstract {
+        font-size: 0.9rem;
+    }
+    
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .contact-card {
+        padding: 20px;
+    }
+    
+    .achievement-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px;
+    }
+    
+    .achievement-icon {
+        font-size: 2.5rem;
+    }
+    
+    .education-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px;
+    }
+    
+    .pub-meta {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .footer-content p {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --section-padding: 60px;
+    }
+    
+    .nav-container {
+        padding: 0 15px;
+    }
+    
+    .hero {
+        padding: 100px 15px 50px;
+    }
+    
+    .section {
+        padding: var(--section-padding) 15px;
+    }
+    
+    .hero-badge {
+        font-size: 0.75rem;
+        padding: 6px 12px;
+    }
+    
+    .hero-name {
+        font-size: 1.8rem;
+    }
+    
+    .hero-title {
+        font-size: 1rem;
+    }
+    
+    .hero-description {
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+    
+    .hero-stats {
+        gap: 20px;
+        padding: 20px 0;
+    }
+    
+    .stat-number {
+        font-size: 1.4rem;
+    }
+    
+    .stat-label {
+        font-size: 0.75rem;
+    }
+    
+    .section-label {
+        font-size: 0.8rem;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .section-subtitle {
+        font-size: 0.95rem;
+    }
+    
     .code-card {
         display: none;
+    }
+    
+    .about-skills {
+        padding: 20px;
+    }
+    
+    .skills-title {
+        font-size: 1rem;
+    }
+    
+    .experience-card {
+        padding: 20px;
+    }
+    
+    .company-info h3 {
+        font-size: 1.1rem;
+    }
+    
+    .project-card {
+        padding: 18px;
+    }
+    
+    .project-features {
+        margin-bottom: 15px;
+    }
+    
+    .project-features h4 {
+        font-size: 0.75rem;
+    }
+    
+    .publication-card {
+        padding: 20px;
+    }
+    
+    .pub-badge {
+        font-size: 0.75rem;
+        padding: 6px 12px;
+    }
+    
+    .pub-link {
+        width: 100%;
+        justify-content: center;
+        padding: 14px 20px;
+    }
+    
+    .achievement-card {
+        padding: 20px;
+    }
+    
+    .achievement-content h3 {
+        font-size: 1rem;
+    }
+    
+    .achievement-content p {
+        font-size: 0.85rem;
+    }
+    
+    .education-card {
+        padding: 20px;
+    }
+    
+    .edu-content h3 {
+        font-size: 1rem;
+    }
+    
+    .contact-card {
+        padding: 18px;
+    }
+    
+    .contact-icon {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .contact-value {
+        font-size: 0.9rem;
+    }
+    
+    .btn-large {
+        padding: 14px 24px;
+        font-size: 0.95rem;
+    }
+    
+    /* Mobile menu improvements */
+    .mobile-menu {
+        padding: 80px 20px;
+    }
+    
+    .mobile-nav-link {
+        font-size: 1.3rem;
     }
 }

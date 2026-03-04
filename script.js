@@ -4,6 +4,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     initCursorGlow();
+    initMatrixRain();
     initNavigation();
     initMobileMenu();
     initTypingEffect();
@@ -41,6 +42,61 @@ function initCursorGlow() {
     }
     
     animate();
+}
+
+// ========================================
+// Matrix Rain Background Effect
+// ========================================
+function initMatrixRain() {
+    const canvas = document.getElementById('matrixCanvas');
+    if (!canvas) return;
+    
+    const ctx = canvas.getContext('2d');
+    
+    // Set canvas size
+    function setCanvasSize() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+    setCanvasSize();
+    window.addEventListener('resize', setCanvasSize);
+    
+    // Characters - mix of code symbols and characters
+    const chars = '01アイウエオカキクケコ{}[]<>=/*+-_;:,.()$#@!%^&|~`';
+    const charArray = chars.split('');
+    
+    const fontSize = 14;
+    const columns = Math.floor(canvas.width / fontSize);
+    
+    // Array to track y position of each column
+    const drops = Array(columns).fill(1);
+    
+    function draw() {
+        // Semi-transparent background for fade effect
+        ctx.fillStyle = 'rgba(10, 10, 15, 0.05)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        
+        // Orange text matching the theme
+        ctx.fillStyle = '#f97316';
+        ctx.font = `${fontSize}px monospace`;
+        
+        for (let i = 0; i < drops.length; i++) {
+            // Random character
+            const char = charArray[Math.floor(Math.random() * charArray.length)];
+            
+            // Draw character
+            ctx.fillText(char, i * fontSize, drops[i] * fontSize);
+            
+            // Reset drop randomly after reaching bottom
+            if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                drops[i] = 0;
+            }
+            
+            drops[i]++;
+        }
+    }
+    
+    setInterval(draw, 50);
 }
 
 // ========================================
