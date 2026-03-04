@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riju Saha | LLM Engineer & Backend Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Cursor glow effect -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+    
+    <!-- Subtle grid background -->
+    <div class="bg-grid"></div>
+    
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <span class="logo-text">Riju</span><span class="logo-accent">.</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#research" class="nav-link">Research</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=iamriju01@gmail.com&su=Job%20Opportunity%20-%20Interested%20in%20Hiring%20You&body=Hi%20Riju%2C%0A%0AI%20came%20across%20your%20portfolio%20and%20I'm%20interested%20in%20discussing%20a%20potential%20opportunity%20with%20you.%0A%0A%5BPlease%20share%20details%20about%20the%20role%2C%20company%2C%20and%20any%20other%20relevant%20information%5D%0A%0ALooking%20forward%20to%20hearing%20from%20you.%0A%0ABest%20regards%2C%0A%5BYour%20Name%5D" target="_blank" rel="noopener" class="nav-cta">Hire Me</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul class="mobile-nav-links">
+            <li><a href="#about" class="mobile-nav-link">About</a></li>
+            <li><a href="#experience" class="mobile-nav-link">Experience</a></li>
+            <li><a href="#projects" class="mobile-nav-link">Projects</a></li>
+            <li><a href="#research" class="mobile-nav-link">Research</a></li>
+            <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                <span>Available for opportunities</span>
+            </div>
+            <h1 class="hero-name">
+                Hi, I'm <span class="name-highlight">Riju Saha</span>
+            </h1>
+            <div class="hero-title">
+                <span id="typingText"></span><span class="cursor">|</span>
+            </div>
+            <p class="hero-description">
+                I build <strong>production-grade LLM systems</strong>, design <strong>agentic workflows</strong>, 
+                and architect <strong>scalable microservices</strong>. Currently leading AI engineering 
+                initiatives at Turing with 1.5+ years of hands-on experience.
+            </p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">1.5+</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">9.0</span>
+                    <span class="stat-label">CGPA</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">1</span>
+                    <span class="stat-label">Research Publication</span>
+                </div>
+            </div>
+            <div class="hero-actions">
+                <a href="#projects" class="btn btn-primary">
+                    <span>View My Work</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="code-card">
+                <div class="code-header">
+                    <div class="code-dots">
+                        <span></span><span></span><span></span>
+                    </div>
+                    <span class="code-filename">profile.py</span>
+                </div>
+                <pre class="code-body"><code><span class="code-keyword">class</span> <span class="code-class">Developer</span>:
+    name = <span class="code-string">"Riju Saha"</span>
+    role = <span class="code-string">"LLM Engineer"</span>
+    
+    skills = [
+        <span class="code-string">"Python"</span>,
+        <span class="code-string">"FastAPI"</span>,
+        <span class="code-string">"LangChain"</span>,
+        <span class="code-string">"Prompt Engineering"</span>
+    ]
+    
+    <span class="code-keyword">def</span> <span class="code-function">build</span>(self):
+        <span class="code-keyword">return</span> <span class="code-string">"AI Systems"</span></code></pre>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">About Me</span>
+                <h2 class="section-title">Building the Future of AI Systems</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="about-lead">
+                        I'm an <strong>LLM Engineer</strong> and <strong>Backend Developer</strong> specializing 
+                        in Python and FastAPI, with hands-on experience building production-grade, LLM-driven microservices.
+                    </p>
+                    <p>
+                        My expertise spans <strong>prompt orchestration</strong>, <strong>agentic workflow automation</strong>, 
+                        <strong>taxonomy-based classification systems</strong>, and <strong>model evaluation pipelines</strong>. 
+                        I focus on creating scalable backend architectures with reliable AI behavior.
+                    </p>
+                    <p>
+                        Currently working at <strong>Turing</strong> as an LLM Python Developer, POD Lead, and Team Lead, 
+                        where I architect and develop AI-powered systems that solve real-world problems at scale.
+                    </p>
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                <polyline points="22 4 12 14.01 9 11.01"/>
+                            </svg>
+                            <span>B.Tech in CSE from MSIT (9.0 CGPA)</span>
+                        </div>
+                        <div class="highlight-item">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                <polyline points="22 4 12 14.01 9 11.01"/>
+                            </svg>
+                            <span>Published Researcher (Springer Nature)</span>
+                        </div>
+                        <div class="highlight-item">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                <polyline points="22 4 12 14.01 9 11.01"/>
+                            </svg>
+                            <span>ACM India Competition Finalist</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-skills">
+                    <h3 class="skills-title">Technical Skills</h3>
+                    <div class="skills-grid">
+                        <div class="skill-group">
+                            <h4>Languages & Frameworks</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">FastAPI</span>
+                                <span class="skill-tag">SQL</span>
+                                <span class="skill-tag">Pydantic</span>
+                            </div>
+                        </div>
+                        <div class="skill-group">
+                            <h4>AI & LLM</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">LLM Engineering</span>
+                                <span class="skill-tag">LangChain</span>
+                                <span class="skill-tag">Prompt Engineering</span>
+                                <span class="skill-tag">Agentic Workflows</span>
+                            </div>
+                        </div>
+                        <div class="skill-group">
+                            <h4>Architecture</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Microservices</span>
+                                <span class="skill-tag">REST APIs</span>
+                                <span class="skill-tag">System Design</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="section experience" id="experience">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Experience</span>
+                <h2 class="section-title">Where I've Worked</h2>
+            </div>
+            <div class="experience-card">
+                <div class="exp-header">
+                    <div class="exp-company">
+                        <div class="company-logo">T</div>
+                        <div class="company-info">
+                            <h3>Turing</h3>
+                            <span class="company-type">AI & Software Development</span>
+                        </div>
+                    </div>
+                    <div class="exp-meta">
+                        <span class="exp-duration">September 2024 – Present</span>
+                        <span class="exp-location">Remote</span>
+                    </div>
+                </div>
+                <div class="exp-roles">
+                    <span class="role-tag primary">LLM Python Developer</span>
+                    <span class="role-tag">POD Lead</span>
+                    <span class="role-tag">Team Lead</span>
+                    <span class="role-tag">Backend Developer</span>
+                </div>
+                <div class="exp-description">
+                    <p>Leading the development of production-grade AI systems and LLM-driven microservices. 
+                    Managing cross-functional teams to deliver scalable solutions for enterprise clients.</p>
+                </div>
+                <div class="exp-achievements">
+                    <h4>Key Contributions</h4>
+                    <ul>
+                        <li>
+                            <strong>Built Chain-of-Thought Orchestration Engine</strong> – Developed a microservice 
+                            for structured reasoning using modular prompt pipelines
+                        </li>
+                        <li>
+                            <strong>Architected Prompt Management System</strong> – Created centralized backend 
+                            for storing, versioning, and orchestrating prompts across LLM applications
+                        </li>
+                        <li>
+                            <strong>Designed Taxonomy Classification Service</strong> – Built API-driven system 
+                            for hierarchical taxonomies and metadata enrichment
+                        </li>
+                        <li>
+                            <strong>Led Agent Benchmarking Initiative</strong> – Created CLI-agnostic scaffold 
+                            to benchmark agents against multiple models
+                        </li>
+                        <li>
+                            <strong>Team Leadership</strong> – Managing POD of developers, conducting code reviews, 
+                            and ensuring delivery of high-quality AI solutions
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section projects" id="projects">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Projects</span>
+                <h2 class="section-title">What I've Built</h2>
+                <p class="section-subtitle">Production-grade AI systems and tools developed at Turing</p>
+            </div>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <article class="project-card featured">
+                    <div class="project-header">
+                        <span class="project-icon">🔗</span>
+                        <span class="project-tag">Featured</span>
+                    </div>
+                    <h3 class="project-title">Chain-of-Thought Orchestration Engine</h3>
+                    <p class="project-description">
+                        A sophisticated microservice that generates <strong>structured Chain-of-Thought reasoning</strong> 
+                        using modular prompt pipelines. The system breaks down complex queries into logical reasoning 
+                        steps, enabling more accurate and explainable AI responses.
+                    </p>
+                    <div class="project-features">
+                        <h4>Key Features:</h4>
+                        <ul>
+                            <li>Modular prompt pipeline architecture for flexible reasoning strategies</li>
+                            <li>Support for multiple LLM backends with unified interface</li>
+                            <li>Structured output parsing with Pydantic validation</li>
+                            <li>Reasoning step decomposition and tracing</li>
+                            <li>RESTful API with FastAPI for easy integration</li>
+                        </ul>
+                    </div>
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>FastAPI</span>
+                        <span>LangChain</span>
+                        <span>Pydantic</span>
+                        <span>LLM</span>
+                    </div>
+                </article>
+
+                <!-- Project 2 -->
+                <article class="project-card">
+                    <div class="project-header">
+                        <span class="project-icon">📝</span>
+                    </div>
+                    <h3 class="project-title">Prompt Management & Orchestration Service</h3>
+                    <p class="project-description">
+                        A <strong>centralized backend system</strong> for storing, versioning, and orchestrating 
+                        prompts across multiple LLM applications. Ensures consistency, traceability, and 
+                        easy rollback capabilities for production AI systems.
+                    </p>
+                    <div class="project-features">
+                        <h4>Key Features:</h4>
+                        <ul>
+                            <li>Git-like versioning system for prompt templates</li>
+                            <li>A/B testing support for prompt variations</li>
+                            <li>Environment-based prompt deployment (dev/staging/prod)</li>
+                            <li>Usage analytics and performance tracking</li>
+                            <li>Role-based access control for team collaboration</li>
+                        </ul>
+                    </div>
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>FastAPI</span>
+                        <span>PostgreSQL</span>
+                        <span>Redis</span>
+                    </div>
+                </article>
+
+                <!-- Project 3 -->
+                <article class="project-card">
+                    <div class="project-header">
+                        <span class="project-icon">🏷️</span>
+                    </div>
+                    <h3 class="project-title">AI Taxonomy Classification & Metadata Service</h3>
+                    <p class="project-description">
+                        An <strong>API-driven service</strong> for managing hierarchical taxonomies used for 
+                        LLM classification and metadata enrichment. Powers intelligent content categorization 
+                        across enterprise applications.
+                    </p>
+                    <div class="project-features">
+                        <h4>Key Features:</h4>
+                        <ul>
+                            <li>Hierarchical taxonomy tree management with CRUD operations</li>
+                            <li>Multi-label classification support</li>
+                            <li>Confidence scoring and threshold-based filtering</li>
+                            <li>Batch processing for high-volume classification</li>
+                            <li>Integration with existing LLM pipelines</li>
+                        </ul>
+                    </div>
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>FastAPI</span>
+                        <span>LLM</span>
+                        <span>Classification</span>
+                    </div>
+                </article>
+
+                <!-- Project 4 -->
+                <article class="project-card">
+                    <div class="project-header">
+                        <span class="project-icon">📋</span>
+                    </div>
+                    <h3 class="project-title">Use-Case & Workflow Repository Service</h3>
+                    <p class="project-description">
+                        A microservice that stores and delivers <strong>standardized use-case definitions</strong> 
+                        and <strong>agentic workflow templates</strong>. Enables rapid deployment of AI solutions 
+                        by providing reusable, tested workflow patterns.
+                    </p>
+                    <div class="project-features">
+                        <h4>Key Features:</h4>
+                        <ul>
+                            <li>Template library for common agentic workflows</li>
+                            <li>Parameterized workflow definitions with validation</li>
+                            <li>Version control for workflow iterations</li>
+                            <li>Documentation generation for each use-case</li>
+                            <li>Integration hooks for monitoring and logging</li>
+                        </ul>
+                    </div>
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>FastAPI</span>
+                        <span>Workflows</span>
+                        <span>Templates</span>
+                    </div>
+                </article>
+
+                <!-- Project 5 -->
+                <article class="project-card">
+                    <div class="project-header">
+                        <span class="project-icon">🔬</span>
+                    </div>
+                    <h3 class="project-title">CLI-Agnostic Agent Comparison System</h3>
+                    <p class="project-description">
+                        A <strong>benchmarking scaffold</strong> to evaluate any CLI agent against any model 
+                        via an LLM Gateway or API keys. Uses a single standardized agent interface for 
+                        fair and reproducible comparisons.
+                    </p>
+                    <div class="project-features">
+                        <h4>Key Features:</h4>
+                        <ul>
+                            <li>Unified interface supporting multiple agent frameworks</li>
+                            <li>Standardized benchmark suite with diverse task types</li>
+                            <li>Automated scoring and metrics collection</li>
+                            <li>Comparative analysis reports with visualizations</li>
+                            <li>Support for custom evaluation criteria</li>
+                        </ul>
+                    </div>
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>CLI</span>
+                        <span>Benchmarking</span>
+                        <span>Agent Systems</span>
+                    </div>
+                </article>
+
+                <!-- Project 6 - Research -->
+                <article class="project-card">
+                    <div class="project-header">
+                        <span class="project-icon">🧬</span>
+                        <span class="project-tag research">Research</span>
+                    </div>
+                    <h3 class="project-title">EOE Disease Detection Using Gene Expression Analysis</h3>
+                    <p class="project-description">
+                        A <strong>machine learning research project</strong> on Eosinophilic Esophagitis (EoE) 
+                        gene detection. Analyzed gene expression datasets to identify potential disease markers 
+                        using novel optimization techniques.
+                    </p>
+                    <div class="project-features">
+                        <h4>Key Features:</h4>
+                        <ul>
+                            <li>Novel simulated annealing-based feature selection</li>
+                            <li>Gene expression dataset analysis and preprocessing</li>
+                            <li>Identification of key biomarkers for GI diseases</li>
+                            <li>Published in Springer Nature (Biochemical Genetics)</li>
+                        </ul>
+                    </div>
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>Machine Learning</span>
+                        <span>Bioinformatics</span>
+                        <span>Research</span>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research & Achievements Section -->
+    <section class="section research" id="research">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Research & Achievements</span>
+                <h2 class="section-title">Academic Contributions</h2>
+            </div>
+            
+            <!-- Publication -->
+            <div class="publication-card">
+                <div class="pub-badge">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                        <polyline points="14 2 14 8 20 8"/>
+                        <line x1="16" y1="13" x2="8" y2="13"/>
+                        <line x1="16" y1="17" x2="8" y2="17"/>
+                        <polyline points="10 9 9 9 8 9"/>
+                    </svg>
+                    <span>Published Research Paper</span>
+                </div>
+                
+                <h3 class="pub-title">
+                    A New Differential Gene Expression Based Simulated Annealing for Solving 
+                    Gene Selection Problem: A Case Study on Eosinophilic Esophagitis and 
+                    Few Other Gastro-intestinal Diseases
+                </h3>
+                
+                <div class="pub-meta">
+                    <div class="pub-venue">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                        </svg>
+                        <span><strong>Springer Nature</strong> – Biochemical Genetics</span>
+                    </div>
+                    <div class="pub-date">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                            <line x1="16" y1="2" x2="16" y2="6"/>
+                            <line x1="8" y1="2" x2="8" y2="6"/>
+                            <line x1="3" y1="10" x2="21" y2="10"/>
+                        </svg>
+                        <span>December 6, 2024</span>
+                    </div>
+                </div>
+                
+                <p class="pub-abstract">
+                    Developed a <strong>simulated annealing-based method</strong> for gene selection, 
+                    identifying key genes associated with gastrointestinal diseases. The research presents 
+                    novel optimization strategies for improved feature selection in genomic datasets, 
+                    contributing to early disease detection methodologies.
+                </p>
+                
+                <div class="pub-authors">
+                    <strong>Authors:</strong> Koushiki Sinha, Sanchari Chakraborty, Arohit Bardhan, 
+                    <span class="author-highlight">Riju Saha</span>, Srijan Chakraborty, Surama Biswas
+                </div>
+                
+                <a href="https://link.springer.com/journal/10528" target="_blank" rel="noopener" class="pub-link">
+                    <span>View Publication</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                        <polyline points="15 3 21 3 21 9"/>
+                        <line x1="10" y1="14" x2="21" y2="3"/>
+                    </svg>
+                </a>
+            </div>
+            
+            <!-- Achievement -->
+            <div class="achievement-card">
+                <div class="achievement-icon">🏆</div>
+                <div class="achievement-content">
+                    <span class="achievement-tag">Competition Finalist</span>
+                    <h3>ACM India B.Tech Project Competition (2024)</h3>
+                    <p>
+                        Selected as a <strong>finalist</strong> among nationwide participants for the research project: 
+                        "Uncovering Unique Genes In Eosinophilic Esophagitis And Other Gastrointestinal Diseases: 
+                        A Simulated Annealing Approach"
+                    </p>
+                    <a href="https://india.acm.org/" target="_blank" rel="noopener" class="achievement-link">
+                        <span>Learn more about ACM India</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                            <polyline points="15 3 21 3 21 9"/>
+                            <line x1="10" y1="14" x2="21" y2="3"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Education -->
+            <div class="education-card">
+                <div class="edu-icon">🎓</div>
+                <div class="edu-content">
+                    <span class="edu-years">2020 - 2024</span>
+                    <h3>Bachelor of Technology in Computer Science & Engineering</h3>
+                    <p class="edu-school">Meghnad Saha Institute of Technology, Kolkata</p>
+                    <div class="edu-score">
+                        <span class="score-label">CGPA</span>
+                        <span class="score-value">9.0 / 10</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-label">Contact</span>
+                <h2 class="section-title">Let's Work Together</h2>
+                <p class="section-subtitle">
+                    I'm currently open to new opportunities in LLM Engineering, Backend Development, 
+                    and AI Systems Architecture. Feel free to reach out!
+                </p>
+            </div>
+            
+            <div class="contact-grid">
+                <a href="mailto:iamriju01@gmail.com" class="contact-card">
+                    <div class="contact-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                    </div>
+                    <div class="contact-info">
+                        <span class="contact-label">Email</span>
+                        <span class="contact-value">iamriju01@gmail.com</span>
+                    </div>
+                </a>
+                
+                <a href="tel:+919836118344" class="contact-card">
+                    <div class="contact-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                    </div>
+                    <div class="contact-info">
+                        <span class="contact-label">Phone</span>
+                        <span class="contact-value">+91 9836118344</span>
+                    </div>
+                </a>
+                
+                <a href="https://linkedin.com/in/riju-saha-102705254" target="_blank" rel="noopener" class="contact-card">
+                    <div class="contact-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                            <rect x="2" y="9" width="4" height="12"/>
+                            <circle cx="4" cy="4" r="2"/>
+                        </svg>
+                    </div>
+                    <div class="contact-info">
+                        <span class="contact-label">LinkedIn</span>
+                        <span class="contact-value">Connect with me</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="contact-cta">
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=iamriju01@gmail.com&su=Job%20Opportunity%20-%20Interested%20in%20Hiring%20You&body=Hi%20Riju%2C%0A%0AI%20came%20across%20your%20portfolio%20and%20I'm%20interested%20in%20discussing%20a%20potential%20opportunity%20with%20you.%0A%0A%5BPlease%20share%20details%20about%20the%20role%2C%20company%2C%20and%20any%20other%20relevant%20information%5D%0A%0ALooking%20forward%20to%20hearing%20from%20you.%0A%0ABest%20regards%2C%0A%5BYour%20Name%5D" target="_blank" rel="noopener" class="btn btn-primary btn-large">
+                    <span>Hire Me</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>Designed & Built by <strong>Riju Saha</strong></p>
+                <p class="footer-copyright">© 2024 All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
