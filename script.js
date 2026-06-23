@@ -3,6 +3,7 @@
 // ========================================
 
 document.addEventListener('DOMContentLoaded', () => {
+    initExperienceDuration();
     initCursorGlow();
     initMatrixRain();
     initNavigation();
@@ -11,6 +12,36 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollAnimations();
     initSmoothScroll();
 });
+
+// ========================================
+// Dynamic Experience Duration
+// ========================================
+function initExperienceDuration() {
+    const experienceStat = document.querySelector('[data-experience-start]');
+    const experienceText = document.querySelector('[data-experience-text]');
+
+    if (!experienceStat) return;
+
+    const startDate = new Date(`${experienceStat.dataset.experienceStart}T00:00:00`);
+    const now = new Date();
+    let months =
+        (now.getFullYear() - startDate.getFullYear()) * 12 +
+        (now.getMonth() - startDate.getMonth());
+
+    if (now.getDate() < startDate.getDate()) {
+        months -= 1;
+    }
+
+    months = Math.max(0, months);
+    const years = months / 12;
+    const experienceValue = `${years.toFixed(1)}+`;
+
+    experienceStat.textContent = experienceValue;
+
+    if (experienceText) {
+        experienceText.textContent = `${experienceValue} years`;
+    }
+}
 
 // ========================================
 // Cursor Glow Effect (works on mobile too)
@@ -326,6 +357,7 @@ function animateStats() {
         const isDecimal = finalValue.includes('.');
         const hasPlus = finalValue.includes('+');
         const numericValue = parseFloat(finalValue);
+        const decimalPlaces = isDecimal ? (finalValue.split('.')[1] || '').replace('+', '').length : 0;
         
         if (isNaN(numericValue)) return;
         
@@ -343,7 +375,7 @@ function animateStats() {
                 stat.textContent = finalValue;
                 clearInterval(counter);
             } else {
-                let displayValue = isDecimal ? current.toFixed(1) : Math.floor(current);
+                let displayValue = isDecimal ? current.toFixed(decimalPlaces) : Math.floor(current);
                 stat.textContent = displayValue + (hasPlus ? '+' : '');
             }
         }, stepTime);
